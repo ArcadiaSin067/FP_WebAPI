@@ -1,0 +1,193 @@
+﻿.swagger-section #header {
+    background-color:#54009f
+}
+
+    .swagger-section #header #logo {
+        font-size: 1.5em;
+        font-weight: bold;
+        text-decoration: none;
+        color: aliceblue;
+    }
+
+.swagger-section #header a#logo {
+    background: transparent url(/Images/bigpig.png) no-repeat left center;
+    background-size: contain;
+}
+
+.swagger-section #header form#api_selector .input a#explore {
+    background-color: #006483;
+}
+
+    .swagger-section #header form#api_selector .input a#explore:hover {
+        background-color: #024371;
+    }
+
+body {
+    background-color: #2d2b32;
+    background: url(/Images/black-linen.png);
+    background-size: auto;
+    z-index: -999;
+}
+
+.swagger-section .swagger-ui-wrap ul#resources li.resource ul.endpoints li.endpoint ul.operations li.operation div.heading h3 span.path a {
+    color: white;
+    text-decoration: none;
+    font-weight: bolder;
+}
+
+.swagger-section .swagger-ui-wrap .info_title {
+    padding-bottom: 10px;
+    font-weight: bold;
+    font-size: 25px;
+    color: cadetblue;
+    font-family: monospace;
+}
+
+.swagger-section .swagger-ui-wrap ul#resources li.resource ul.endpoints li.endpoint ul.operations li.operation.post div.heading {
+    background-color: #343645;
+    border: 1px solid #434762;
+}
+.swagger-section .swagger-ui-wrap ul#resources li.resource ul.endpoints li.endpoint ul.operations li.operation.get div.heading {
+    background-color: #343645;
+    border: 1px solid #434762;
+}
+.swagger-section .swagger-ui-wrap ul#resources li.resource ul.endpoints li.endpoint ul.operations li.operation.put div.heading {
+    background-color: #343645;
+    border: 1px solid #434762;
+}
+.swagger-section .swagger-ui-wrap ul#resources li.resource ul.endpoints li.endpoint ul.operations li.operation.delete div.heading {
+    background-color: #343645;
+    border: 1px solid #434762;
+}
+
+
+.swagger-section .swagger-ui-wrap ul#resources li.resource ul.endpoints li.endpoint ul.operations li.operation.post div.content {
+    background-color: #dedede;
+    border: 1px solid #434762;
+}
+.swagger-section .swagger-ui-wrap ul#resources li.resource ul.endpoints li.endpoint ul.operations li.operation.get div.content {
+    background-color: #dedede;
+    border: 1px solid #434762;
+}
+.swagger-section .swagger-ui-wrap ul#resources li.resource ul.endpoints li.endpoint ul.operations li.operation.put div.content {
+    background-color: #dedede;
+    border: 1px solid #434762;
+}
+.swagger-section .swagger-ui-wrap ul#resources li.resource ul.endpoints li.endpoint ul.operations li.operation.delete div.content {
+    background-color: #dedede;
+    border: 1px solid #434762;
+}
+
+.swagger-section .swagger-ui-wrap pre,
+.swagger-section .swagger-ui-wrap pre:hover {
+    font-family: "Anonymous Pro", "Menlo", "Consolas", "Bitstream Vera Sans Mono", "Courier New", monospace;
+    background-color: #151f3a !important;
+    border: 1px solid #000;
+    -webkit-text-fill-color: yellowgreen;
+    padding: 5px !important;
+}
+
+.swagger-section .swagger-ui-wrap .model-signature pre {
+    font-size: .85em;
+    line-height: 1.2em;
+    overflow: auto;
+    max-height: 200px;
+    cursor: default;
+}
+
+.swagger-section .swagger-ui-wrap input.parameter {
+    width: 300px;
+    padding: 5px;
+    background-color:#282828;
+    color:aliceblue;
+    border: 1px solid #aaa;
+}
+
+.swagger-section .swagger-ui-wrap ul#resources li.resource ul.endpoints li.endpoint ul.operations li.operation div.content div.sandbox_header input.submit {
+    display: block;
+    border-radius: 4px;
+    border: 1px solid #2d2b32;
+    color: yellowgreen;
+    background-color: midnightblue;
+    clear: none;
+    float: left;
+    padding: 6px 8px;
+}
+.swagger-section .swagger-ui-wrap ul#resources li.resource ul.endpoints li.endpoint ul.operations li.operation div.content div.sandbox_header input.submit:hover {
+    color: yellowgreen;
+    background-color: #3232a5;
+    cursor:pointer;
+}
+
+.enumBox {
+    width: 311px;
+    border: 1px solid darkslategray;
+    padding: 4px;
+    background-color: #2d2b32;
+    color: aliceblue;
+    cursor:pointer;
+}
+
+.contentType {
+    padding: 3px;
+    background-color: #2d2b32;
+    color: aliceblue;
+    cursor: pointer;
+}
+
+.windowShade {
+    border: 1px solid rgba(12.5, 50, 50,.5);
+    padding: 25px;
+    border-radius: 10px;
+    background-color: rgba(5, 5, 10, 0.4);
+}
+
+.swagger-section .hljs {
+    display: block;
+    overflow-x: auto;
+    padding: 0.5em;
+    background: transparent !important;
+}
+
+.swagger-section .swagger-ui-wrap .model-signature .signature-nav a {
+    text-decoration: none;
+    color: #AAA;
+    background-color: #2f3b4f;
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid black;
+}
+.swagger-section .swagger-ui-wrap .model-signature .signature-nav .selected {
+    color: #c3d9ec;
+    background-color: #3c5666;
+    text-decoration: none;
+}
+.swagger-section .swagger-ui-wrap .model-signature .signature-nav a:hover {
+    text-decoration: underline;
+    color: white;
+}
+
+.swagger-section .swagger-ui-wrap ul#resources li.resource.active div.heading h2 a {
+    color: #8dafcc;
+    font-family: monospace;
+    font-size: x-large;
+}
+.swagger-section .swagger-ui-wrap ul#resources li.resource div.heading h2 a:hover {
+    color: #c3d9ec;
+    font-size:20.5px;
+}
+
+.swagger-section .swagger-ui-wrap ul#resources li.resource div.heading ul.options li a {
+    color: #e7e7e7;
+    text-decoration: none;
+}
+    .swagger-section .swagger-ui-wrap ul#resources li.resource div.heading ul.options li a:hover {
+        text-decoration: underline;
+        color: #c3d9ec;
+    }
+
+.swagger-section .swagger-ui-wrap ul#resources li.resource div.heading h2 a {
+    color: #e7e7e7;
+}
+
+

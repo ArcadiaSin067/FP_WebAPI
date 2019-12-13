@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using FP_WebAPI.Enums;
+using System.Data.Entity;
 using System.Data.SqlClient;
 using System.Threading.Tasks;
 using System.Collections.Generic;
@@ -14,12 +15,12 @@ namespace FP_WebAPI.Models
             { return new APIContext(); }
 
 
-        public async Task<BankAccount> AddBankAccountToHousehold(string name, double startBal, int accountType, string ownerId, int hhId, double lowBalLvl)
+        public async Task<BankAccount> AddBankAccountToHousehold(string name, double startBal, AccountType accountType, string ownerId, int hhId, double lowBalLvl)
         {
             return await Database.SqlQuery<BankAccount>("AddBankAccountToHousehold @name, @startBal, @accountType, @ownerId, @hhId, @lowBalLvl",
                 new SqlParameter("name", name),
                 new SqlParameter("startBal", startBal),
-                new SqlParameter("accountType", accountType),
+                new SqlParameter("accountType", (int)accountType),
                 new SqlParameter("ownerId", ownerId),
                 new SqlParameter("hhId", hhId),
                 new SqlParameter("lowBalLvl", lowBalLvl)).FirstOrDefaultAsync();
@@ -33,12 +34,12 @@ namespace FP_WebAPI.Models
                 new SqlParameter("hhId", hhId)).FirstOrDefaultAsync();
         }
         
-        public async Task<Transaction> AddTransactionToBankAccount(string memo, double amount, int transactionType, int accountId, int bucketItemId, string ownerId)
+        public async Task<Transaction> AddTransactionToBankAccount(string memo, double amount, TransactionType transactionType, int accountId, int bucketItemId, string ownerId)
         {
             return await Database.SqlQuery<Transaction>("AddTransactionToBankAccount @memo, @amount, @transactionType, @accountId, @bucketItemId, @ownerId",
                 new SqlParameter("memo", memo),
                 new SqlParameter("amount", amount),
-                new SqlParameter("transactionType", transactionType),
+                new SqlParameter("transactionType", (int)transactionType),
                 new SqlParameter("accountId", accountId),
                 new SqlParameter("bucketItemId", bucketItemId),
                 new SqlParameter("ownerId", ownerId)).FirstOrDefaultAsync();

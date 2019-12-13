@@ -1,5 +1,7 @@
 ﻿using System;
 using FP_WebAPI.Enums;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
 
 namespace FP_WebAPI.Models
@@ -22,6 +24,8 @@ namespace FP_WebAPI.Models
         public double LowBalanceLevel { get; set; }
 
         [Display(Name = "Account Type")]
+        [EnumDataType(typeof(AccountType))]
+        [JsonConverter(typeof(StringEnumConverter))]
         public AccountType AccountType { get; set; }
     }
 
@@ -102,6 +106,8 @@ namespace FP_WebAPI.Models
         public double Amount { get; set; }
 
         [Display(Name = "Transaction Type")]
+        [EnumDataType(typeof(TransactionType))]
+        [JsonConverter(typeof(StringEnumConverter))]
         public TransactionType TransactionType { get; set; }
     }
 }

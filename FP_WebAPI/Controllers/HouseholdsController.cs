@@ -2,6 +2,7 @@
 using System.Web.Http;
 using FP_WebAPI.Models;
 using System.Threading.Tasks;
+using System.Web.Http.Description;
 
 namespace FP_WebAPI.Controllers
 {
@@ -15,16 +16,11 @@ namespace FP_WebAPI.Controllers
         }
 
         [Route("GetHouseholdDetailsAsJson")]
+        [ResponseType(typeof(Household))]
         public async Task<IHttpActionResult> GetHouseholdDetailsAsJson(int id)
         {
             var data = await db.GetHouseholdDetails(id);
-            return Json(data, new JsonSerializerSettings { Formatting = Newtonsoft.Json.Formatting.Indented });
+            return Json(data, new JsonSerializerSettings { Formatting = Formatting.Indented });
         }
-
-
-
-
-
-
     }
 }
