@@ -1,5 +1,52 @@
-﻿.swagger-section #header {
-    background-color:#54009f
+﻿/*Custom scrollbar*/
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+    background: #6a7070;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #1f1f1f;
+    border:1px solid darkslategrey;
+}
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: #0f0f0f;
+    }
+
+
+.heading {
+    -webkit-transition:font-size .5s;
+}
+    .heading:hover {
+        -webkit-text-fill-color:#c5c7cc;
+        font-size:16px
+    }
+
+.swagger-section .swagger-ui-wrap ul#resources li.resource.active div.heading h2 a {
+    color: #8dafcc;
+    font-family: monospace;
+    font-size: 24px;
+}
+.swagger-section .swagger-ui-wrap ul#resources li.resource div.heading h2 a:hover {
+    color: #c3d9ec;
+}
+.swagger-section .swagger-ui-wrap ul#resources li.resource div.heading h2 a {
+    color: #e7e7e7;
+}
+
+.toggleEndpointList:hover, a.collapseResource:hover, a.expandResource:hover {
+    -webkit-text-fill-color:teal;
+}
+
+.swagger-section #header {
+    background-color: #232135;
+    background-image: linear-gradient(#101010, transparent);
+    padding-top: 15px;
 }
 
     .swagger-section #header #logo {
@@ -15,17 +62,18 @@
 }
 
 .swagger-section #header form#api_selector .input a#explore {
-    background-color: #006483;
+    background-color: #024371;
 }
 
     .swagger-section #header form#api_selector .input a#explore:hover {
-        background-color: #024371;
+        background-color: #03548e;
     }
 
 body {
     background-color: #2d2b32;
     background: url(/Images/black-linen.png);
     background-size: auto;
+    color:#a6a6a6;
     z-index: -999;
 }
 
@@ -62,19 +110,19 @@ body {
 
 
 .swagger-section .swagger-ui-wrap ul#resources li.resource ul.endpoints li.endpoint ul.operations li.operation.post div.content {
-    background-color: #dedede;
+    background-color: #322f2f;
     border: 1px solid #434762;
 }
 .swagger-section .swagger-ui-wrap ul#resources li.resource ul.endpoints li.endpoint ul.operations li.operation.get div.content {
-    background-color: #dedede;
+    background-color: #322f2f;
     border: 1px solid #434762;
 }
 .swagger-section .swagger-ui-wrap ul#resources li.resource ul.endpoints li.endpoint ul.operations li.operation.put div.content {
-    background-color: #dedede;
+    background-color: #322f2f;
     border: 1px solid #434762;
 }
 .swagger-section .swagger-ui-wrap ul#resources li.resource ul.endpoints li.endpoint ul.operations li.operation.delete div.content {
-    background-color: #dedede;
+    background-color: #322f2f;
     border: 1px solid #434762;
 }
 
@@ -100,7 +148,7 @@ body {
     padding: 5px;
     background-color:#282828;
     color:aliceblue;
-    border: 1px solid #aaa;
+    border: 1px solid darkslategray;
 }
 
 .swagger-section .swagger-ui-wrap ul#resources li.resource ul.endpoints li.endpoint ul.operations li.operation div.content div.sandbox_header input.submit {
@@ -123,13 +171,14 @@ body {
     width: 311px;
     border: 1px solid darkslategray;
     padding: 4px;
-    background-color: #2d2b32;
+    background-color: #282828;
     color: aliceblue;
     cursor:pointer;
 }
 
 .contentType {
     padding: 3px;
+    margin-left:5px;
     background-color: #2d2b32;
     color: aliceblue;
     cursor: pointer;
@@ -147,6 +196,14 @@ body {
     overflow-x: auto;
     padding: 0.5em;
     background: transparent !important;
+}
+
+.response_throbber {
+    background-color: white;
+    opacity: .75;
+    margin: 5px;
+    border: 1px solid darkslategray;
+    border-radius: 9px;
 }
 
 .swagger-section .swagger-ui-wrap .model-signature .signature-nav a {
@@ -167,18 +224,8 @@ body {
     color: white;
 }
 
-.swagger-section .swagger-ui-wrap ul#resources li.resource.active div.heading h2 a {
-    color: #8dafcc;
-    font-family: monospace;
-    font-size: x-large;
-}
-.swagger-section .swagger-ui-wrap ul#resources li.resource div.heading h2 a:hover {
-    color: #c3d9ec;
-    font-size:20.5px;
-}
-
 .swagger-section .swagger-ui-wrap ul#resources li.resource div.heading ul.options li a {
-    color: #e7e7e7;
+    color: #878b94;
     text-decoration: none;
 }
     .swagger-section .swagger-ui-wrap ul#resources li.resource div.heading ul.options li a:hover {
@@ -186,8 +233,32 @@ body {
         color: #c3d9ec;
     }
 
-.swagger-section .swagger-ui-wrap ul#resources li.resource div.heading h2 a {
-    color: #e7e7e7;
+
+.swagger-section .swagger-ui-wrap table thead tr th {
+    padding: 5px;
+    font-size: 0.9em;
+    color: #eef4ff;
+    border-bottom: 1px solid #999999;
 }
+
+.swagger-section .swagger-ui-wrap .model-signature .description .strong {
+    font-weight: bold;
+    color: #78beff;
+    font-size: .9em;
+}
+
+div {
+    color:azure;
+}
+
+.swagger-section .swagger-ui-wrap ul#resources li.resource {
+    border-bottom: 1px solid #8c8c8c;
+}
+
+
+
+
+
+
 
 

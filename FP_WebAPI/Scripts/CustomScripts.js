@@ -9,10 +9,15 @@
     $("input[name='baseUrl'], input[name='apiKey']").css("display", "none");
 
     //top application text
-    $("#logo").html("&nbsp; &nbsp; Biggy_Bank");
+    $("#logo").html("&nbsp; &nbsp; &nbsp;Biggy_Bank");
+    $('#logo').attr("href", "/Home/Index")
 
     //top button text
     $("#explore").text("Reload");
+    //$('#explore').on("click", function (e) {
+    //    e.preventDefault;
+    //    $.post('~/Home/Index.cshtml');
+    //});
 
     //custom api name
     $(this.getElementsByClassName("info_title")).text("DH_WebAPI");
