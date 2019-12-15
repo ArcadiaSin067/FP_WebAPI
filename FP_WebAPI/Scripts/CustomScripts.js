@@ -20,7 +20,7 @@
     //});
 
     //custom api name
-    $(this.getElementsByClassName("info_title")).text("DH_WebAPI");
+    $(this.getElementsByClassName("info_title")).text("DH_FPWebAPI");
 
     //awesome window effect
     $(this.getElementById("swagger-ui-container")).addClass("windowShade");

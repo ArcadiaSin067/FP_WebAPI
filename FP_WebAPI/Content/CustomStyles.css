@@ -1,4 +1,4 @@
-﻿/*Custom scrollbar*/
+﻿/*Custom scrollbars for chrome*/
 /* width */
 ::-webkit-scrollbar {
     width: 10px;
@@ -12,6 +12,7 @@
 ::-webkit-scrollbar-thumb {
     background: #1f1f1f;
     border:1px solid darkslategrey;
+    border-radius:5px;
 }
     /* Handle on hover */
     ::-webkit-scrollbar-thumb:hover {
@@ -23,9 +24,12 @@
     -webkit-transition:font-size .5s;
 }
     .heading:hover {
-        -webkit-text-fill-color:#c5c7cc;
         font-size:16px
     }
+
+.swagger-section .swagger-ui-wrap ul#resources li.resource div.heading:hover h2 {
+    -webkit-text-fill-color:teal;
+}
 
 .swagger-section .swagger-ui-wrap ul#resources li.resource.active div.heading h2 a {
     color: #8dafcc;
@@ -87,43 +91,58 @@ body {
     padding-bottom: 10px;
     font-weight: bold;
     font-size: 25px;
-    color: cadetblue;
-    font-family: monospace;
+    color: #3abbbf;
+    font-family: cursive;
 }
 
 .swagger-section .swagger-ui-wrap ul#resources li.resource ul.endpoints li.endpoint ul.operations li.operation.post div.heading {
     background-color: #343645;
     border: 1px solid #434762;
+    margin-left: 15px;
+    margin-right: 15px;
 }
 .swagger-section .swagger-ui-wrap ul#resources li.resource ul.endpoints li.endpoint ul.operations li.operation.get div.heading {
     background-color: #343645;
     border: 1px solid #434762;
+    margin-left: 15px;
+    margin-right: 15px;
 }
 .swagger-section .swagger-ui-wrap ul#resources li.resource ul.endpoints li.endpoint ul.operations li.operation.put div.heading {
     background-color: #343645;
     border: 1px solid #434762;
+    margin-left: 15px;
+    margin-right: 15px;
 }
 .swagger-section .swagger-ui-wrap ul#resources li.resource ul.endpoints li.endpoint ul.operations li.operation.delete div.heading {
     background-color: #343645;
     border: 1px solid #434762;
+    margin-left: 15px;
+    margin-right: 15px;
 }
-
 
 .swagger-section .swagger-ui-wrap ul#resources li.resource ul.endpoints li.endpoint ul.operations li.operation.post div.content {
     background-color: #322f2f;
     border: 1px solid #434762;
+    margin-left: 15px;
+    margin-right: 15px;
 }
 .swagger-section .swagger-ui-wrap ul#resources li.resource ul.endpoints li.endpoint ul.operations li.operation.get div.content {
     background-color: #322f2f;
     border: 1px solid #434762;
+    margin-left: 15px;
+    margin-right: 15px;
 }
 .swagger-section .swagger-ui-wrap ul#resources li.resource ul.endpoints li.endpoint ul.operations li.operation.put div.content {
     background-color: #322f2f;
     border: 1px solid #434762;
+    margin-left: 15px;
+    margin-right: 15px;
 }
 .swagger-section .swagger-ui-wrap ul#resources li.resource ul.endpoints li.endpoint ul.operations li.operation.delete div.content {
     background-color: #322f2f;
     border: 1px solid #434762;
+    margin-left: 15px;
+    margin-right: 15px;
 }
 
 .swagger-section .swagger-ui-wrap pre,
@@ -191,6 +210,13 @@ body {
     background-color: rgba(5, 5, 10, 0.4);
 }
 
+.description {
+    display: block;
+    padding: 15px;
+    border: 1px solid black;
+    background-color: rgb(21, 31, 58);
+}
+
 .swagger-section .hljs {
     display: block;
     overflow-x: auto;
@@ -255,10 +281,19 @@ div {
     border-bottom: 1px solid #8c8c8c;
 }
 
+.swagger-section .swagger-ui-wrap p {
+    line-height: 1.4em;
+    padding: 5px 10px;
+    color: yellowgreen;
+}
 
+.swagger-section .swagger-ui-wrap .model-signature .description span:last-of-type.propDesc.markdown > p:only-child {
+    margin-right: -3px;
+    color: yellowgreen;
+}
 
-
-
-
+.swagger-section .swagger-ui-wrap .model-signature .propType {
+    color: #8f8ff2;
+}
 
 
