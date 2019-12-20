@@ -25,11 +25,12 @@ namespace FP_WebAPI.Controllers
         /// <param name="bucketItemId">Bucket Item Id</param>
         /// <param name="ownerId">Transaction Owner Id</param>
         /// <returns>Json data</returns>
+        [HttpPost]
         [Route("AddTransactionToBankAccountAsJson")]
         [ResponseType(typeof(BankAccount))]
-        public async Task<IHttpActionResult> AddTransactionToBankAccountAsJson(string memo, double amount, TransactionType transactionType, int accountId, int bucketItemId, string ownerId)
+        public IHttpActionResult AddTransactionToBankAccountAsJson(string memo, double amount, TransactionType transactionType, int accountId, int bucketItemId, string ownerId)
         {
-            var data = await db.AddTransactionToBankAccount(memo, amount, transactionType, accountId, bucketItemId, ownerId);
+            var data = db.AddTransactionToBankAccount(memo, amount, transactionType, accountId, bucketItemId, ownerId);
             return Json(data, new JsonSerializerSettings { Formatting = Formatting.Indented });
         }
 
@@ -39,6 +40,7 @@ namespace FP_WebAPI.Controllers
         /// <param name="id">Transaction Id</param>
         /// <param name="aId">Bank Account Id</param>
         /// <returns>Xml data</returns>
+        [HttpGet]
         [Route("GetTransactionDetails")]
         public async Task<Transaction> GetTransactionDetails(int id, int aId)
         {
@@ -51,6 +53,7 @@ namespace FP_WebAPI.Controllers
         /// <param name="id">Transaction Id</param>
         /// <param name="aId">Bank Account Id</param>
         /// <returns>Json data</returns>
+        [HttpGet]
         [Route("GetTransactionDetailsAsJson")]
         [ResponseType(typeof(BankAccount))]
         public async Task<IHttpActionResult> GetTransactionDetailsAsJson(int id, int aId)
@@ -64,6 +67,7 @@ namespace FP_WebAPI.Controllers
         /// </summary>
         /// <param name="id">Bank Account Id</param>
         /// <returns>Json data</returns>
+        [HttpGet]
         [Route("GetTransactionsForBankAccountAsJson")]
         [ResponseType(typeof(BankAccount))]
         public async Task<IHttpActionResult> GetTransactionsForBankAccountAsJson(int id)

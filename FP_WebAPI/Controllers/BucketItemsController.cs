@@ -13,6 +13,19 @@ namespace FP_WebAPI.Controllers
     [RoutePrefix("api/BucketItems"), DisplayName("Bucket Items")]
     public class BucketItemsController : BaseController
     {
+        /// <summary>
+        /// Delete a specific Bucket Item.
+        /// </summary>
+        /// <param name="id">Bucket Item Id</param>
+        /// <returns>Json data</returns>
+        [HttpDelete]
+        [Route("DeleteBucketItemAsJson")]
+        [ResponseType(typeof(BucketItem))]
+        public IHttpActionResult DeleteBucketItemAsJson(int id)
+        {
+            var data = db.DeleteBucketItem(id);
+            return Json(data, new JsonSerializerSettings { Formatting = Formatting.Indented });
+        }
 
         /// <summary>
         /// Get all the details for a specific Bucket Item as XML.
@@ -20,6 +33,7 @@ namespace FP_WebAPI.Controllers
         /// <param name="id">Bucket Item Id</param>
         /// <param name="bId">Bucket Id</param>
         /// <returns></returns>
+        [HttpGet]
         [Route("GetBucketItemDetails")]
         public async Task<BucketItem> GetBucketItemDetails(int id, int bId)
         {
@@ -32,6 +46,7 @@ namespace FP_WebAPI.Controllers
         /// <param name="id">Bucket Item Id</param>
         /// <param name="bId">Bucket Id</param>
         /// <returns>Json data</returns>
+        [HttpGet]
         [Route("GetBucketItemDetailsAsJson")]
         [ResponseType(typeof(BucketItem))]
         public async Task<IHttpActionResult> GetBucketItemDetailsAsJson(int id, int bId)
@@ -45,6 +60,7 @@ namespace FP_WebAPI.Controllers
         /// </summary>
         /// <param name="id">Bucket Id</param>
         /// <returns>Json data</returns>
+        [HttpGet]
         [Route("GetBucketItemsForBucketAsJson")]
         [ResponseType(typeof(BucketItem))]
         public async Task<IHttpActionResult> GetBucketItemsForBucketAsJson(int id)

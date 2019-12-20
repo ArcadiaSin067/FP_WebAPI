@@ -21,11 +21,12 @@ namespace FP_WebAPI.Controllers
         /// <param name="ownerId">Bucket Owner Id</param>
         /// <param name="hhId">Household Id</param>
         /// <returns>Json data</returns>
+        [HttpPost]
         [Route("AddBucketToHouseholdAsJson")]
         [ResponseType(typeof(Bucket))]
-        public async Task<IHttpActionResult> AddBucketToHouseholdAsJson(string name, string ownerId, int hhId)
+        public IHttpActionResult AddBucketToHouseholdAsJson(string name, string ownerId, int hhId)
         {
-            var data = await db.AddBucketToHousehold(name, ownerId, hhId);
+            var data = db.AddBucketToHousehold(name, ownerId, hhId);
             return Json(data, new JsonSerializerSettings { Formatting = Formatting.Indented });
         }
 
@@ -35,6 +36,7 @@ namespace FP_WebAPI.Controllers
         /// <param name="id">Bucket Id</param>
         /// <param name="hhId">Household Id</param>
         /// <returns>Xml data</returns>
+        [HttpGet]
         [Route("GetBucketDetails")]
         public async Task<Bucket> GetBucketDetails(int id, int hhId)
         {
@@ -47,6 +49,7 @@ namespace FP_WebAPI.Controllers
         /// <param name="id">Bucket Id</param>
         /// <param name="hhId">Household Id</param>
         /// <returns>Json data</returns>
+        [HttpGet]
         [Route("GetBucketDetailsAsJson")]
         [ResponseType(typeof(Bucket))]
         public async Task<IHttpActionResult> GetBucketDetailsAsJson(int id, int hhId)
@@ -60,6 +63,7 @@ namespace FP_WebAPI.Controllers
         /// </summary>
         /// <param name="id">Household Id</param>
         /// <returns>Json data</returns>
+        [HttpGet]
         [Route("GetBucketsForHouseholdAsJson")]
         [ResponseType(typeof(Bucket))]
         public async Task<IHttpActionResult> GetBucketsForHouseholdAsJson(int id)

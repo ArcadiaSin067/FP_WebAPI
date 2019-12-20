@@ -15,34 +15,40 @@ namespace FP_WebAPI.Models
             { return new APIContext(); }
 
 
-        public async Task<BankAccount> AddBankAccountToHousehold(string name, double startBal, AccountType accountType, string ownerId, int hhId, double lowBalLvl)
+        public int AddBankAccountToHousehold(string name, double startBal, AccountType accountType, string ownerId, int hhId, double lowBalLvl)
         {
-            return await Database.SqlQuery<BankAccount>("AddBankAccountToHousehold @name, @startBal, @accountType, @ownerId, @hhId, @lowBalLvl",
+            return Database.ExecuteSqlCommand("AddBankAccountToHousehold @name, @startBal, @accountType, @ownerId, @hhId, @lowBalLvl",
                 new SqlParameter("name", name),
                 new SqlParameter("startBal", startBal),
                 new SqlParameter("accountType", (int)accountType),
                 new SqlParameter("ownerId", ownerId),
                 new SqlParameter("hhId", hhId),
-                new SqlParameter("lowBalLvl", lowBalLvl)).FirstOrDefaultAsync();
+                new SqlParameter("lowBalLvl", lowBalLvl));
         }
        
-        public async Task<Bucket> AddBucketToHousehold(string name, string ownerId, int hhId)
+        public int AddBucketToHousehold(string name, string ownerId, int hhId)
         {
-            return await Database.SqlQuery<Bucket>("AddBucketToHousehold @name, @ownerId, @hhId",
+            return Database.ExecuteSqlCommand("AddBucketToHousehold @name, @ownerId, @hhId",
                 new SqlParameter("name", name),
                 new SqlParameter("ownerId", ownerId),
-                new SqlParameter("hhId", hhId)).FirstOrDefaultAsync();
+                new SqlParameter("hhId", hhId));
         }
         
-        public async Task<Transaction> AddTransactionToBankAccount(string memo, double amount, TransactionType transactionType, int accountId, int bucketItemId, string ownerId)
+        public int AddTransactionToBankAccount(string memo, double amount, TransactionType transactionType, int accountId, int bucketItemId, string ownerId)
         {
-            return await Database.SqlQuery<Transaction>("AddTransactionToBankAccount @memo, @amount, @transactionType, @accountId, @bucketItemId, @ownerId",
+            return Database.ExecuteSqlCommand("AddTransactionToBankAccount @memo, @amount, @transactionType, @accountId, @bucketItemId, @ownerId",
                 new SqlParameter("memo", memo),
                 new SqlParameter("amount", amount),
                 new SqlParameter("transactionType", (int)transactionType),
                 new SqlParameter("accountId", accountId),
                 new SqlParameter("bucketItemId", bucketItemId),
-                new SqlParameter("ownerId", ownerId)).FirstOrDefaultAsync();
+                new SqlParameter("ownerId", ownerId));
+        }
+
+        public int DeleteBucketItem(int id)
+        {
+            return Database.ExecuteSqlCommand("DeleteBucketItem @id",
+                new SqlParameter("id", id));
         }
 
         public async Task<BankAccount> GetBankAccountDetails(int id, int hhId)
@@ -101,6 +107,13 @@ namespace FP_WebAPI.Models
         {
             return await Database.SqlQuery<Transaction>("GetTransactionsForBankAccount @id",
                 new SqlParameter("id", id)).ToListAsync();
+        }
+
+        public int UpdateHousehold(int id, string name)
+        {
+            return Database.ExecuteSqlCommand("UpdateHousehold @id, @name",
+                new SqlParameter("id", id),
+                new SqlParameter("name", name));
         }
     }
 }

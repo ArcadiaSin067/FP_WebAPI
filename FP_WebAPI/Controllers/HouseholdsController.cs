@@ -13,12 +13,12 @@ namespace FP_WebAPI.Controllers
     [RoutePrefix("api/Households"), DisplayName("Households")]
     public class HouseholdsController : BaseController
     {
-
         /// <summary>
         /// Get all Details for a specific household as XML.
         /// </summary>
         /// <param name="id">Household Id</param>
         /// <returns>Xml data</returns>
+        [HttpGet]
         [Route("GetHouseholdDetails")]
         public async Task<Household> GetHouseholdDetails(int id)
         {
@@ -30,11 +30,27 @@ namespace FP_WebAPI.Controllers
         /// </summary>
         /// <param name="id">Household Id</param>
         /// <returns>Json data</returns>
+        [HttpGet]
         [Route("GetHouseholdDetailsAsJson")]
         [ResponseType(typeof(Household))]
         public async Task<IHttpActionResult> GetHouseholdDetailsAsJson(int id)
         {
             var data = await db.GetHouseholdDetails(id);
+            return Json(data, new JsonSerializerSettings { Formatting = Formatting.Indented });
+        }
+
+        /// <summary>
+        /// Update the Name of a specific household.
+        /// </summary>
+        /// <param name="id">Household Id</param>
+        /// <param name="name">Household Name</param>
+        /// <returns>Json data</returns>
+        [HttpPut]
+        [Route("UpdateHouseholdAsJson")]
+        [ResponseType(typeof(Household))]
+        public IHttpActionResult UpdateHouseholdAsJson(int id, string name)
+        {
+            var data = db.UpdateHousehold(id, name);
             return Json(data, new JsonSerializerSettings { Formatting = Formatting.Indented });
         }
     }

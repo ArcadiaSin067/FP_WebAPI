@@ -24,11 +24,12 @@ namespace FP_WebAPI.Controllers
         /// <param name="hhId">Household Id</param>
         /// <param name="lowBalLvl">Low Balance Level</param>
         /// <returns>Json data</returns>
+        [HttpPost]
         [Route("AddAccountToHouseholdAsJson")]
         [ResponseType(typeof(BankAccount))]
-        public async Task<IHttpActionResult> AddBankAccountToHouseholdAsJson(string name, double startBal, AccountType accountType, string ownerId, int hhId, double lowBalLvl)
+        public IHttpActionResult AddBankAccountToHouseholdAsJson(string name, double startBal, AccountType accountType, string ownerId, int hhId, double lowBalLvl)
         {
-            var data = await db.AddBankAccountToHousehold(name, startBal, accountType, ownerId, hhId, lowBalLvl);
+            var data = db.AddBankAccountToHousehold(name, startBal, accountType, ownerId, hhId, lowBalLvl);
             return Json(data, new JsonSerializerSettings { Formatting = Formatting.Indented });
         }
 
@@ -38,6 +39,7 @@ namespace FP_WebAPI.Controllers
         /// <param name="id">Bank Account Id</param>
         /// <param name="hhId">Household Id</param>
         /// <returns>Xml data</returns>
+        [HttpGet]
         [Route("GetAccountDetails")]
         public async Task<BankAccount> GetBankAccountDetails(int id, int hhId)
         {
@@ -50,6 +52,7 @@ namespace FP_WebAPI.Controllers
         /// <param name="id">Bank Account Id</param>
         /// <param name="hhId">Household Id</param>
         /// <returns>Json data</returns>
+        [HttpGet]
         [Route("GetAccountDetailsAsJson")]
         [ResponseType(typeof(BankAccount))]
         public async Task<IHttpActionResult> GetBankAccountDetailsAsJson(int id, int hhId)
@@ -63,6 +66,7 @@ namespace FP_WebAPI.Controllers
         /// </summary>
         /// <param name="id">Household Id</param>
         /// <returns>Json data</returns>
+        [HttpGet]
         [Route("GetAccountsForHouseholdAsJson")]
         [ResponseType(typeof(BankAccount))]
         public async Task<IHttpActionResult> GetBankAccountsForHouseholdAsJson(int id)

@@ -526,6 +526,13 @@
             Controller for Bucket Items.
             </summary>
         </member>
+        <member name="M:FP_WebAPI.Controllers.BucketItemsController.DeleteBucketItemAsJson(System.Int32)">
+            <summary>
+            Delete a specific Bucket Item.
+            </summary>
+            <param name="id">Bucket Item Id</param>
+            <returns>Json data</returns>
+        </member>
         <member name="M:FP_WebAPI.Controllers.BucketItemsController.GetBucketItemDetails(System.Int32,System.Int32)">
             <summary>
             Get all the details for a specific Bucket Item as XML.
@@ -603,6 +610,14 @@
             Get all Details for a specific household.
             </summary>
             <param name="id">Household Id</param>
+            <returns>Json data</returns>
+        </member>
+        <member name="M:FP_WebAPI.Controllers.HouseholdsController.UpdateHouseholdAsJson(System.Int32,System.String)">
+            <summary>
+            Update the Name of a specific household.
+            </summary>
+            <param name="id">Household Id</param>
+            <param name="name">Household Name</param>
             <returns>Json data</returns>
         </member>
         <member name="T:FP_WebAPI.Controllers.TransactionsController">
