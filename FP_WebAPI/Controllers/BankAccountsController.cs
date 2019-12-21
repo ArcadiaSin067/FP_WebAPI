@@ -26,7 +26,6 @@ namespace FP_WebAPI.Controllers
         /// <returns>Json data</returns>
         [HttpPost]
         [Route("AddAccountToHouseholdAsJson")]
-        [ResponseType(typeof(BankAccount))]
         public IHttpActionResult AddBankAccountToHouseholdAsJson(string name, double startBal, AccountType accountType, string ownerId, int hhId, double lowBalLvl)
         {
             var data = db.AddBankAccountToHousehold(name, startBal, accountType, ownerId, hhId, lowBalLvl);

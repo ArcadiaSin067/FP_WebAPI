@@ -47,7 +47,6 @@ namespace FP_WebAPI.Controllers
         /// <returns>Json data</returns>
         [HttpPut]
         [Route("UpdateHouseholdAsJson")]
-        [ResponseType(typeof(Household))]
         public IHttpActionResult UpdateHouseholdAsJson(int id, string name)
         {
             var data = db.UpdateHousehold(id, name);

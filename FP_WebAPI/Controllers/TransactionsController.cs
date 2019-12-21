@@ -27,7 +27,6 @@ namespace FP_WebAPI.Controllers
         /// <returns>Json data</returns>
         [HttpPost]
         [Route("AddTransactionToBankAccountAsJson")]
-        [ResponseType(typeof(BankAccount))]
         public IHttpActionResult AddTransactionToBankAccountAsJson(string memo, double amount, TransactionType transactionType, int accountId, int bucketItemId, string ownerId)
         {
             var data = db.AddTransactionToBankAccount(memo, amount, transactionType, accountId, bucketItemId, ownerId);

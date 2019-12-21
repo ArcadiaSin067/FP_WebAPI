@@ -23,7 +23,6 @@ namespace FP_WebAPI.Controllers
         /// <returns>Json data</returns>
         [HttpPost]
         [Route("AddBucketToHouseholdAsJson")]
-        [ResponseType(typeof(Bucket))]
         public IHttpActionResult AddBucketToHouseholdAsJson(string name, string ownerId, int hhId)
         {
             var data = db.AddBucketToHousehold(name, ownerId, hhId);

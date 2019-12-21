@@ -20,7 +20,6 @@ namespace FP_WebAPI.Controllers
         /// <returns>Json data</returns>
         [HttpDelete]
         [Route("DeleteBucketItemAsJson")]
-        [ResponseType(typeof(BucketItem))]
         public IHttpActionResult DeleteBucketItemAsJson(int id)
         {
             var data = db.DeleteBucketItem(id);
